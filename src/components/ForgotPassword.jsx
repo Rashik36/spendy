@@ -25,17 +25,19 @@ function ForgotPassword() {
   return (
     <>
       <form
-        className="h-screen flex justify-center items-center text-white bg-slate-900"
+        className="h-screen flex justify-center items-center bg-slate-900"
         onSubmit={handleSubmit}
       >
-        <div className="bg-opacity-5 w-1/2 bg-slate-400 p-8 shadow-lg rounded-md">
-          <h1 className="text-center text-4xl pb-10">Password Reset</h1>
-          <div className="mb-5">
-            <label className="block mb-2">Email</label>
+        <div className="bg-white p-10 shadow-lg rounded-md w-[550px] sm:h-[600px] h-full">
+          <h1 className="text-center text-4xl mb-16 font-bold">
+            Password Reset
+          </h1>
+          <div className="mb-8">
+            <label className="block font-bold mb-2">Email</label>
             <input
               type="text"
               placeholder="Enter email"
-              className="border w-full text-black"
+              className="border border-solid border-slate-100 w-full shadow-md rounded-md px-4 py-2"
               ref={emailRef}
               required
             />
@@ -44,17 +46,22 @@ function ForgotPassword() {
           <div className="pt-4">
             <button
               disabled={loading}
-              className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md"
+              className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md py-2"
               type="submit"
             >
               Reset Password
             </button>
-            <div className="flex justify-between text-sm pt-6">
+            <div className="flex justify-between text-sm pt-3">
               <p>
-                Don't have an account? <Link to="/signup">Sign Up</Link>
+                Don't have an account?{" "}
+                <Link to="/signup" className="text-blue-700 font-medium">
+                  Sign Up
+                </Link>
               </p>
               <p>
-                <Link to="/login">Log In</Link>
+                <Link to="/login" className="text-blue-700 font-medium">
+                  Log In
+                </Link>
               </p>
             </div>
           </div>

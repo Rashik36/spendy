@@ -17,13 +17,16 @@ function Dashboard() {
 
   return (
     <>
-      <div className="h-screen flex justify-center items-center text-white bg-slate-900">
-        <div className="bg-opacity-5 w-1/2 bg-slate-400 p-8 shadow-lg rounded-md">
-          <h1 className="text-center text-6xl pb-10">Profile</h1>
-          <div className="p-4">Email: {currentUser.email}</div>
+      <div className="h-screen flex justify-center items-center bg-slate-900">
+        <div className="bg-white p-10 shadow-lg rounded-md w-[550px] sm:h-[600px] h-full ">
+          <h1 className="text-center text-5xl mb-16 font-bold">Profile</h1>
+          <div className="flex p-4">
+            <div className="font-bold">Email:</div>
+            {currentUser.email}
+          </div>
           <div className="p-4">
             <Link to="/update-profile">
-              <div className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md text-center">
+              <div className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md py-2 text-center">
                 Update Profile
               </div>
             </Link>
@@ -31,7 +34,7 @@ function Dashboard() {
           <div className="p-4">
             <button
               onClick={handleLogout}
-              className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md"
+              className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md py-2 text-center"
             >
               Log Out
             </button>

@@ -42,36 +42,38 @@ function UpdateProfile() {
   return (
     <>
       <form
-        className="h-screen flex justify-center items-center text-white bg-slate-900"
+        className="h-screen flex justify-center items-center bg-slate-900"
         onSubmit={handleSubmit}
       >
-        <div className="bg-opacity-5 w-1/2 bg-slate-400 p-8 shadow-lg rounded-md">
-          <h1 className="text-center text-5xl pb-10">Update Profile</h1>
-          <div className="mb-5">
-            <label className="block mb-2">Email</label>
+        <div className="bg-white p-10 shadow-lg rounded-md w-[550px] sm:h-[650px] h-full">
+          <h1 className="text-center text-5xl mb-16 font-bold">
+            Update Profile
+          </h1>
+          <div className="mb-8">
+            <label className="block font-bold mb-2">Email</label>
             <input
               type="text"
-              className="border w-full text-black"
+              className="border border-solid border-slate-100 w-full shadow-md rounded-md px-4 py-2"
               ref={emailRef}
               required
               defaultValue={currentUser.email}
             />
           </div>
-          <div className="mb-5">
-            <label className="block mb-2">Password</label>
+          <div className="mb-8">
+            <label className="block font-bold mb-2">Password</label>
             <input
               type="password"
-              className="border w-full text-black"
+              className="border border-solid border-slate-100 w-full shadow-md rounded-md px-4 py-2"
               ref={passwordRef}
               placeholder="Leave blank to keep the same"
             />
           </div>
 
-          <div className="mb-5">
-            <label className="block mb-2">Confirm Password</label>
+          <div className="mb-8">
+            <label className="block font-bold mb-2">Confirm Password</label>
             <input
               type="password"
-              className="border w-full text-black"
+              className="border border-solid border-slate-100 w-full shadow-md rounded-md px-4 py-2"
               ref={passwordConfirmRef}
               placeholder="Leave blank to keep the same"
             />
@@ -80,13 +82,13 @@ function UpdateProfile() {
           <div className="pt-4">
             <button
               disabled={loading}
-              className=" bg-indigo-950 text-white w-full rounded-md"
+              className=" border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md py-2 mb-5"
               type="submit"
             >
               Update
             </button>
             <Link to="/">
-              <div className="text-center bg-red-950 rounded-md mt-4">
+              <div className="border-2 border-indigo-950 bg-red-950 text-white w-full rounded-md py-2 text-center ">
                 Cancel
               </div>
             </Link>
