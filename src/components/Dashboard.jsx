@@ -23,8 +23,14 @@ function Dashboard() {
 
   // create an event listener
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
-  });
+
+    // Remove event listener when component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   async function handleLogout() {
     try {
@@ -51,7 +57,7 @@ function Dashboard() {
           <p className="text-sm">Use your login info in you Desktop</p>
           <button
             onClick={handleLogout}
-            className="border-2 border-indigo-950 bg-indigo-950 text-white w-full rounded-md py-2 text-center w-40 mt-20"
+            className="border-2 border-indigo-950 bg-indigo-950 text-white rounded-md py-2 text-center w-40 mt-20"
           >
             Log Out
           </button>
