@@ -10,6 +10,7 @@ function Signup() {
   const { signup } = useAuth();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,11 +22,10 @@ function Signup() {
     try {
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      alert("Account created successfully");
       navigate("/login");
     } catch (error) {
       console.log(error);
-      alert("Failed to create an account");
+      setError("Failed to create an account" + error.code);
     }
     setLoading(false);
   }
@@ -38,6 +38,7 @@ function Signup() {
       >
         <div className="bg-white p-10 shadow-lg rounded-md w-[550px] sm:h-[650px] h-full ">
           <h1 className="text-center text-5xl mb-16 font-bold">Sign Up</h1>
+          {error && <p className="text-red-500 mb-5">{error}</p>}
           <div className="mb-8">
             <label className="block font-bold mb-2">Email</label>
             <input

@@ -8,6 +8,7 @@ function Login() {
   const passwordRef = useRef();
   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -19,7 +20,7 @@ function Login() {
       navigate("/");
     } catch (error) {
       console.log(error);
-      alert("Failed to log In");
+      setError("Failed to log in" + error.code);
     }
     setLoading(false);
   }
@@ -32,6 +33,7 @@ function Login() {
       >
         <div className="bg-white p-10 shadow-lg rounded-md w-[550px] sm:h-[600px] h-full ">
           <h1 className="text-center text-5xl mb-16 font-bold">Log In</h1>
+          {error && <p className="text-red-500 mb-5">{error}</p>}
           <div className="mb-8">
             <label className="block font-bold mb-2">Email</label>
             <input

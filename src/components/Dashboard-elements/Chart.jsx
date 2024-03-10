@@ -31,10 +31,6 @@ function Chart() {
   const { getTransactionByDate } = useDatabase();
   const transaction = getTransactionByDate();
 
-  useEffect(() => {
-    console.log(transaction);
-  }, [transaction]);
-
   const data = {
     labels: transaction.map((inc) => {
       const { date } = inc[1];

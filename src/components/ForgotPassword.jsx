@@ -7,6 +7,7 @@ function ForgotPassword() {
   const emailRef = useRef();
   const { resetPassword } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -14,10 +15,10 @@ function ForgotPassword() {
     try {
       setLoading(true);
       await resetPassword(emailRef.current.value);
-      alert("Check your email for further instructions");
+      setError("Check your email for further instructions");
     } catch (error) {
       console.log(error);
-      alert("Failed to reset password");
+      setError("Failed to reset password" + error.code);
     }
     setLoading(false);
   }
@@ -32,6 +33,7 @@ function ForgotPassword() {
           <h1 className="text-center text-4xl mb-16 font-bold">
             Password Reset
           </h1>
+          {error && <p className="text-red-500 mb-5 ">{error}</p>}
           <div className="mb-8">
             <label className="block font-bold mb-2">Email</label>
             <input

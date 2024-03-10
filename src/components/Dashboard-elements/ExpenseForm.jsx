@@ -20,7 +20,7 @@ function ExpenseForm() {
   }
   return (
     <form
-      className=" p-10 shadow-lg rounded-xl border-2 border-[#577590] h-[90%] bg-[#A7C4DD] flex flex-col items-center"
+      className=" p-10 shadow-lg rounded-xl border-2 border-red-600 h-[90%] bg-[#FF8C42] flex flex-col items-center"
       onSubmit={handleSubmit}
     >
       <div className="m-5">
@@ -46,6 +46,8 @@ function ExpenseForm() {
         <select onChange={(e) => setCategory(e.target.value)}>
           <option value="Rent">Rent</option>
           <option value="Subscription">Subscription</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Purchase">Purchase</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -69,7 +71,7 @@ function ExpenseForm() {
         ></textarea>
       </div>
       <div className="m-5">
-        <button className="bg-[#1E3A8A] text-white p-2 rounded-md">Add</button>
+        <button className="bg-indigo-950 text-white p-2 rounded-md">Add</button>
       </div>
     </form>
   );

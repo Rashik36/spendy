@@ -16,8 +16,8 @@ function Transaction() {
     getIncome();
   }, []);
   return (
-    <div className="bg-white p-10 shadow-lg rounded-md flex-1 h-[90%] ml-20 mr-20">
-      <div className="ml-40 mr-40">
+    <div className="bg-white p-10 shadow-lg rounded-xl flex-1 h-[90%] ml-20 mr-20">
+      <div className="ml-32 mr-32">
         <div className=" border-[#577590]  rounded-3xl flex justify-center mt-0 mb-10 border-4">
           <p className="text-2xl p-3 font-bold text-slate-900">Transactions </p>
         </div>

@@ -22,7 +22,7 @@ function Overview() {
   } = useDatabase();
 
   const sorted_Transaction = getTransaction();
-  const sortedTransaction = sorted_Transaction.slice(1, 6);
+  const sortedTransaction = sorted_Transaction.slice(0, 6);
 
   useEffect(() => {
     getIncome();
@@ -35,12 +35,12 @@ function Overview() {
   }, [income, expense]);
 
   return (
-    <div className="bg-white p-10 shadow-lg rounded-md flex-1 h-[90%] ml-20 mr-20 w-[90%] overflow-hidden">
+    <div className="bg-white p-10 shadow-lg rounded-xl flex-1 h-[90%] ml-20 mr-20 w-[90%] overflow-hidden">
       <div
         className={
           total_Income - total_Expense <= 0
-            ? "border-red-600 rounded-3xl flex justify-center mt-0 mb-10 border-4 mr-20 ml-40"
-            : "border-green-600 rounded-3xl flex justify-center mt-0 mb-10 border-4 mr-20 ml-40"
+            ? "border-red-600 rounded-3xl flex justify-center mt-0 mb-10 border-4 mr-32 ml-32"
+            : "border-green-600 rounded-3xl flex justify-center mt-0 mb-10 border-4 mr-32 ml-32"
         }
       >
         <p className="text-2xl p-3 font-bold text-slate-900">
@@ -60,7 +60,7 @@ function Overview() {
         <Chart />
         <div className="flex flex-col flex-1">
           <h1 className="text-2xl font-bold text-slate-900 text-center">
-            Transaction
+            Recent Transaction
           </h1>
           <div className="flex-1 p-6 pt-0">
             {sortedTransaction.map((sortedTransaction) => {

@@ -10,13 +10,14 @@ function UpdateProfile() {
   const { currentUser, update_email, update_password } = useAuth();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      alert("Passwords do not match");
+      setError("Passwords do not match");
     }
 
     const promises = [];
@@ -32,7 +33,7 @@ function UpdateProfile() {
         navigate("/");
       })
       .catch(() => {
-        alert("Failed to update account");
+        setError("Failed to update account");
       })
       .finally(() => {
         setLoading(false);
@@ -49,6 +50,7 @@ function UpdateProfile() {
           <h1 className="text-center text-5xl mb-16 font-bold">
             Update Profile
           </h1>
+          {error && <p className="text-red-500 mb-5">{error}</p>}
           <div className="mb-8">
             <label className="block font-bold mb-2">Email</label>
             <input
