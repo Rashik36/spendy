@@ -39,8 +39,8 @@ function Overview() {
       <div
         className={
           total_Income - total_Expense <= 0
-            ? "border-red-600 rounded-3xl flex justify-center mt-0 mb-10 border-4 mr-32 ml-32"
-            : "border-green-600 rounded-3xl flex justify-center mt-0 mb-10 border-4 mr-32 ml-32"
+            ? "border-red-600 rounded-3xl flex justify-center border-4 mb-10"
+            : "border-green-600 rounded-3xl flex justify-center border-4 mb-10"
         }
       >
         <p className="text-2xl p-3 font-bold text-slate-900">
@@ -56,7 +56,7 @@ function Overview() {
           </span>
         </p>
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         <Chart />
         <div className="flex flex-col flex-1">
           <h1 className="text-2xl font-bold text-slate-900 text-center">
@@ -103,7 +103,9 @@ function Overview() {
       <div className="mt-10">
         <div className="flex justify-center gap-10">
           <div className="bg-green-100 p-4 rounded-md border-green-600 border-2">
-            <h1 className="text-2xl font-bold text-green-700">Total Income</h1>
+            <h1 className="text-2xl font-bold text-green-700 border">
+              Total Income
+            </h1>
             <p className="text-4xl font-bold text-green-700 text-center">
               ${total_Income}
             </p>
