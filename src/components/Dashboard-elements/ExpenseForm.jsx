@@ -20,10 +20,10 @@ function ExpenseForm() {
   }
   return (
     <form
-      className=" p-10 shadow-lg rounded-xl border-2 border-red-600 h-[90%] bg-[#FF8C42] flex flex-col items-center"
+      className=" pr-5 pl-5 pt-2 shadow-lg rounded-xl border-2 border-red-600 h-[90%] bg-[#FF8C42] flex flex-col items-center"
       onSubmit={handleSubmit}
     >
-      <div className="m-5">
+      <div className="m-4">
         <input
           className="p-2 rounded-md"
           value={title}
@@ -32,7 +32,7 @@ function ExpenseForm() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
-      <div className="m-5">
+      <div className="m-4">
         <input
           className="p-2 rounded-md"
           value={amount}
@@ -41,7 +41,7 @@ function ExpenseForm() {
           onChange={(e) => setAmount(e.target.value)}
         />
       </div>
-      <div className="m-5">
+      <div className="m-4">
         <label>Category: </label>
         <select onChange={(e) => setCategory(e.target.value)}>
           <option value="Rent">Rent</option>
@@ -55,13 +55,13 @@ function ExpenseForm() {
         <label>Date:</label>
         <input
           type="date"
-          className="m-5"
+          className="m-4"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
       </div>
-      <label className="ml-5">Desc: </label>
-      <div className="ml-5">
+      <label className="ml-4">Desc: </label>
+      <div className="ml-4">
         <textarea
           className="p-2 rounded-md"
           rows={5}
@@ -70,7 +70,7 @@ function ExpenseForm() {
           onChange={(e) => setDesc(e.target.value)}
         ></textarea>
       </div>
-      <div className="m-5">
+      <div className="m-4">
         <button className="bg-indigo-950 text-white p-2 rounded-md">Add</button>
       </div>
     </form>

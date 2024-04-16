@@ -20,36 +20,34 @@ function Transaction() {
       <div className=" border-[#577590] rounded-3xl flex justify-center border-4 mb-10">
         <p className="text-2xl p-3 font-bold text-slate-900">Transactions</p>
       </div>
-      <div className="flex-1 scrollbar scrollbar-thumb-slate-900 overflow-y-scroll overflow-x-hidden h-[700px] p-6 pt-0">
+      <div className="flex-1 scrollbar scrollbar-thumb-slate-900 overflow-y-scroll overflow-x-hidden h-[700px] p-5">
         {sortedTransaction.map((sortedTransaction) => {
           return (
             <div
               key={sortedTransaction[0]}
               className={
                 sortedTransaction[1].type === "expense"
-                  ? " border-spacing-1 border-red-500 border-2 m-2 mt-0 md:w-full p-2 rounded-lg bg-red-100 relative"
-                  : "border-spacing-1 border-green-500 border-2 m-2 mt-0 md:w-full p-2 rounded-lg bg-green-100 relative"
+                  ? " border-spacing-1 border-red-500 border-2 md:w-full p-2 rounded-lg bg-red-100 relative"
+                  : "border-spacing-1 border-green-500 border-2 md:w-full p-2 rounded-lg bg-green-100 relative"
               }
             >
               <h1>{sortedTransaction[1].title}</h1>
-              <div className="w-[80%]">
-                <div className="flex justify-between text-sm">
-                  <p className="flex">
-                    <FaDollarSign className="relative top-1 right-1" />{" "}
-                    {sortedTransaction[1].amount}
-                  </p>
-                  <p className="flex">
-                    <FaCalendar className="relative top-1 right-1" />{" "}
-                    {sortedTransaction[1].date}
-                  </p>
-                  <p className="flex">
-                    <FaBusinessTime className="relative top-1 right-1" />{" "}
-                    {sortedTransaction[1].category}
-                  </p>
-                  <p className="flex">
-                    <FaComments className="relative top-1 right-1" />{" "}
-                    {sortedTransaction[1].desc}
-                  </p>
+              <div className="flex text-sm overflow-visible justify-between">
+                <div className="flex">
+                  <FaDollarSign />
+                  {sortedTransaction[1].amount}
+                </div>
+                <div className="flex">
+                  <FaCalendar />
+                  {sortedTransaction[1].date}
+                </div>
+                <div className="flex">
+                  <FaBusinessTime />
+                  {sortedTransaction[1].category}
+                </div>
+                <div className="flex">
+                  <FaComments />
+                  {sortedTransaction[1].desc}
                 </div>
               </div>
             </div>
