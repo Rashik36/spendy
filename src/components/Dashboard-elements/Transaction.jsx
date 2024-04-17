@@ -32,7 +32,7 @@ function Transaction() {
               }
             >
               <h1>{sortedTransaction[1].title}</h1>
-              <div className="flex text-sm overflow-visible justify-between">
+              <div className="flex text-sm overflow-visible justify-between flex-wrap">
                 <div className="flex">
                   <FaDollarSign />
                   {sortedTransaction[1].amount}

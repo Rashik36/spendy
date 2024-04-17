@@ -23,7 +23,7 @@ function ExpenseTransaction() {
             className="border-spacing-1 border-red-500 border-2 md:w-full p-2 rounded-lg bg-red-100 relative"
           >
             <h1>{expense[1].title}</h1>
-            <div className="flex text-sm overflow-visible justify-between w-[80%]">
+            <div className="flex text-sm overflow-visible justify-between w-[80%] flex-wrap">
               <div className="flex">
                 <FaDollarSign />
                 {expense[1].amount}

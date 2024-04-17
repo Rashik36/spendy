@@ -74,7 +74,7 @@ function Overview() {
                   }
                 >
                   <h1>{sortedTransaction[1].title}</h1>
-                  <div className="flex text-sm overflow-visible justify-between">
+                  <div className="flex flex-wrap justify-between text-sm overflow-visible">
                     <div className="flex">
                       <FaDollarSign />
                       {sortedTransaction[1].amount}

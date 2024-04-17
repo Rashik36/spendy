@@ -17,7 +17,7 @@ function DashboardNav({ setNavID, navID }) {
     }
   }
   return (
-    <div className="bg-white p-10 shadow-lg rounded-xl w-[20%} h-[90%] ml-10 flex flex-col justify-between">
+    <div className="bg-white p-10 shadow-lg rounded-xl h-[90%] ml-10 flex flex-col justify-between overflow-auto">
       <div className="flex flex-col items-center">
         <FaUser className="size-16" />
         <div className="flex p-4 text-sm">
@@ -25,7 +25,7 @@ function DashboardNav({ setNavID, navID }) {
           {currentUser.email}
         </div>
       </div>
-      <section className="">
+      <section>
         {navItems.map((item, index) => {
           return (
             <div className="p-4" key={index}>
